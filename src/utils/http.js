@@ -5,6 +5,7 @@ import config from '../config';
 /**
  * Http Utility.
  */
+
 const http = axios.create({
   baseURL: config.baseURL,
   headers: {
@@ -13,6 +14,7 @@ const http = axios.create({
 });
 
 const refreshTokenHttp = axios.create({
+  baseURL: config.baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

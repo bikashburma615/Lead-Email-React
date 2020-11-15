@@ -3,7 +3,7 @@ export const setAccessToken = (accessToken) => {
 }
 
 export const getAccessToken = () => {
-	localStorage.getItem('accessToken');
+	return localStorage.getItem('accessToken');
 }
 
 export const setRefreshToken = (refreshToken) => {
@@ -11,7 +11,7 @@ export const setRefreshToken = (refreshToken) => {
 }
 
 export const getRefreshToken = () => {
-	localStorage.getItem('refreshToken');
+	return localStorage.getItem('refreshToken');
 }
 
 export const clear = () => {

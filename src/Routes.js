@@ -7,14 +7,18 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 
+import PrivateRoute from './PrivateRoute';
+
+import APP_CONSTANTS from './constant';
+
 const Routes = () => {
 	return <React.Fragment>
 		<Container fluid>
 			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route exact path='/login' component={Login} />
-				<Route exact path='/signup' component={Signup} />
-				<Route exact path='/dashboard' component={Dashboard} />
+				<PrivateRoute exact path='/login' component={Login} authorizedRoles={[]}/>
+				<PrivateRoute exact path='/signup' component={Signup} authorizedRoles={[]}/>
+				<PrivateRoute exact path='/' component={Home} authorizedRoles={['user']}/>
+				<PrivateRoute exact path='/dashboard' component={Dashboard} authorizedRoles={['admin']}/>
 			</Switch>
 		</Container>
 	</React.Fragment>

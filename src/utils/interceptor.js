@@ -74,6 +74,8 @@ export const unauthorizedResponseHandler = async (error) => {
 			}
 		}
 	}
+
+	return Promise.reject(error);
 }
 
 const releaseHeldRequests = (error, accessToken = null) => {
